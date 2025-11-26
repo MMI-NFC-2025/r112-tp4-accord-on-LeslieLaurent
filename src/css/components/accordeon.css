@@ -1,3 +1,50 @@
-/**
-* Accordeon
-*/
+.accordeon {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.accordeon details {
+  display: flex;               
+  align-items: center;         
+  width: 160px;                
+  overflow: hidden;
+  transition: width 0.3s ease;
+  cursor: pointer;
+
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.accordeon details[open] {
+  width: 450px;                
+}
+
+.accordeon summary {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+}
+
+.accordeon summary::-webkit-details-marker {
+  display: none;               
+}
+
+.accordeon summary img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.accordeon details > div {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding-left: 20px;
+  flex: 1;                   
+}
+
+.accordeon details[open] > div {
+  opacity: 1;
+}
